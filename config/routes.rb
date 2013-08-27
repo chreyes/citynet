@@ -1,4 +1,6 @@
 DevisePruebas3::Application.routes.draw do
+  resources :roles
+
   get "home/index"
   devise_for :users
   resources :users
