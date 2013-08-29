@@ -1,4 +1,8 @@
 DevisePruebas3::Application.routes.draw do
+  resources :clients
+
+  resources :tasks
+
   resources :roles
 
   get "home/index"

@@ -10,6 +10,7 @@
 	<div id="user_nav">
 		<% if user_signed_in? %>
 			logeado como : <%= current_user.email %>
+			<%= link_to "tasks", tasks_path %>
 			<%= link_to "salir", destroy_user_session_path, method: :delete %>
 		<!--	%= link_to "editar", edit_user_registration_path %>
 			 % if can? :manage, @users %>

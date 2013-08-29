@@ -135,6 +135,7 @@ DEPENDENCIES
   jquery-rails
   pry-rails
   rails (= 4.0.0)
+  railties
   rolify
   sass-rails (~> 4.0.0)
   sdoc
