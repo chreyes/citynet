@@ -10,13 +10,15 @@
 	<div id="user_nav">
 		<% if user_signed_in? %>
 			logeado como : <%= current_user.email %>
-			<%= link_to "tasks", tasks_path %>
+			<% if current_user.has_role? :ing %>
+				<%= link_to "tasks", tasks_path %>
+			<% end %>
+			<% if current_user.has_role? :admin %>
+				<%= link_to "users", users_path %>
+				<%= link_to "roles", roles_path %>
+				<%= link_to "clients", clients_path %>
+			<% end %>
 			<%= link_to "salir", destroy_user_session_path, method: :delete %>
-		<!--	%= link_to "editar", edit_user_registration_path %>
-			 % if can? :manage, @users %>
-				%= link_to "crear cuenta", new_user_registration_path %>
-			% end %> -->
-
 		<% else %>
 			<%= link_to "login" , new_user_session_path %>
 		<% end %>
