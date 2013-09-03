@@ -9,5 +9,27 @@
   <%= @task.client.name %>
 </p>
 
+<p>
+  <strong>Project:</strong>
+  <%= @task.project.name %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @task.place.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @task.type.name %>
+</p>
+
+<p>
+  <strong>HH:</strong>
+  <%= @task.hh %>
+</p>
+
+<p> <%= Time.now %>  </p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

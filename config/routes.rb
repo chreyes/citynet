@@ -1,4 +1,10 @@
 DevisePruebas3::Application.routes.draw do
+  resources :places
+
+  resources :types
+
+  resources :projects
+
   resources :clients
 
   resources :tasks
