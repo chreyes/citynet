@@ -1,0 +1,55 @@
+
+<h1>Listing tasks</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Client</th>
+      <th>Project</th>
+      <th>Place</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>HH</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.user.email %></td>
+        <td><%= task.name %></td>
+        <td><%= task.client.name %></td>
+	<td>
+	<% unless task.project %>	
+		<%= task.project_id %>
+	<% else %>
+		<%= task.project.name %>
+	<% end %>
+	</td>
+	<td>
+	<% unless task.place %>	
+		<%= task.place_id %>
+	<% else %>
+		<%= task.place.name %>
+	<% end %>
+	</td>
+	<td>
+	<% unless task.type_id %>	
+		<%= task.type_id %>
+	<% else %>
+		<%= task.type.name %>
+	<% end %>
+</td>
+        <td><%= task.date %></td>
+        <td><%= task.hh %></td>
+        <td><%= link_to 'Show', task , class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

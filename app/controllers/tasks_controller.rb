@@ -36,6 +36,7 @@ class TasksController < ApplicationController
 	  @projects = Project.all
 	  @places = Place.all
 	  @types = Type.all
+	  @responsibles = Responsible.all
 	  @task = @user.tasks.create(task_params)
 
 	  redirect_to task_path(@tasks) 
@@ -74,6 +75,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name,:hh, :activity, :date, :client_id, :project_id, :place_id, :type_id )
+      params.require(:task).permit(:name,:hh, :activity, :date, :observations, :client_id, :project_id, :place_id, :type_id, :system_responsible_id, :place_responsible_id)
     end
 end

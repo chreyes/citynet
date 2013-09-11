@@ -1,4 +1,6 @@
 DevisePruebas3::Application.routes.draw do
+  resources :responsibles
+
   resources :places
 
   resources :types

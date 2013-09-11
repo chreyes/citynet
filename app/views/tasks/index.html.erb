@@ -1,57 +1,7 @@
-<h1>Listing tasks</h1>
+<% if current_user.has_role? :admin %>
+	<%= render 'admin' %>
+<% elsif current_user.has_role? :ing %>
+	<%= render 'ing' %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Client</th>
-      <th>Project</th>
-      <th>Place</th>
-      <th>Type</th>
-      <th>HH</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.client.name %></td>
-	<td>
-	<% unless task.project %>	
-		<%= task.project_id %>
-	<% else %>
-		<%= task.project.name %>
-	<% end %>
-	</td>
-	<td>
-	<% unless task.place %>	
-		<%= task.place_id %>
-	<% else %>
-		<%= task.place.name %>
-	<% end %>
-	</td>
-	<td>
-	<% unless task.type_id %>	
-		<%= task.type_id %>
-	<% else %>
-		<%= task.type.name %>
-	<% end %>
-	</td>
-        <td><%= task.hh %></td>
-        <td><%= task.date %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Task', new_task_path %>
