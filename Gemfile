@@ -6,8 +6,9 @@ gem 'rails', '4.0.0'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 	                              :github => 'anjlab/bootstrap-rails'
 
-gem 'bootstrap-sass'
 gem 'better_errors'
+ruby '2.0.0'
+gem 'rails_12factor'
 #gem 'twitter-bootstrap-rails'
 # Use sqlite3 as the database for Active Record
 
