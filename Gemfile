@@ -5,8 +5,13 @@ gem 'rails', '4.0.0'
 ruby '2.0.0'
 gem 'rails_12factor'
 
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+	                              :github => 'anjlab/bootstrap-rails'
 
-
+gem 'better_errors'
+ruby '2.0.0'
+gem 'rails_12factor'
+#gem 'twitter-bootstrap-rails'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
@@ -19,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

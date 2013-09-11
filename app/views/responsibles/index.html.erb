@@ -1,0 +1,29 @@
+<h1>Listing responsibles</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @responsibles.each do |responsible| %>
+      <tr>
+        <td><%= responsible.firstname %></td>
+        <td><%= responsible.lastname %></td>
+        <td><%= link_to 'Show', responsible %></td>
+        <td><%= link_to 'Edit', edit_responsible_path(responsible) %></td>
+        <td><%= link_to 'Destroy', responsible, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Responsible', new_responsible_path %>
