@@ -4,6 +4,12 @@
   <strong>Name:</strong>
   <%= @task.name %>
 </p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @task.activity %>
+</p>
+
 <p>
   <strong>Client:</strong>
   <%= @task.client.name %>
@@ -35,11 +41,15 @@
 </p>
 
 <p>
+  <strong>Observations:</strong>
+  <%= @task.observations %>
+</p>
+<p>
+
   <strong>HH:</strong>
   <%= @task.hh %>
 </p>
 
-<p> <%= Time.now %>  </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
