@@ -23,5 +23,7 @@ test:
 production:
   adapter: postgresql 
  # database: db/production.sqlite3
+  database: devise_pruebas3_production
+
   pool: 5
   timeout: 5000
