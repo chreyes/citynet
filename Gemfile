@@ -5,6 +5,8 @@ gem 'rails', '4.0.0'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 	                              :github => 'anjlab/bootstrap-rails'
 
+gem 'bootstrap-select-rails'
+
 gem 'better_errors'
 ruby '2.0.0'
 gem 'rails_12factor'

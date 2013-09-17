@@ -14,55 +14,55 @@
   <div class="row">
 <div class="col-md-6">
 	
-  <div class="field">
+	<div class="input-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control"  %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :activity %><br>
-    <%= f.text_area :activity %>
+  <div class="input-group">
+	  <%= f.label :activity %><br>
+	  <%= f.text_area :activity , class: "form-control"  %>
   </div>
-  <div class="control-group">
+  <div class="form-group">
 	  <%= f.label :client_id, class: "control-label" %>
-		  <%= collection_select(:task, :client_id, Client.all, :id, :name) %> 
+	  <%= collection_select(:task, :client_id, Client.all, :id, :name,{}, {:class => 'form-control'}) %> 
   </div>
   <div class="field">
     <%= f.label :project_id %><br />
-    <%= collection_select(:task, :project_id, Project.all, :id, :name, {:include_blank => ' ' }) %> 
+    <%= collection_select(:task, :project_id, Project.all, :id, :name, {:include_blank => ' ' },{:class => 'form-control'}) %>   
   </div>
   <div class="field">
     <%= f.label :place_id %><br />
-    <%= collection_select(:task, :place_id, Place.all, :id, :name) %> 
+    <%= collection_select(:task, :place_id, Place.all, :id, :name,{}, {:class => 'form-control'}) %>   
   </div>
 </div>
 <div class="col-md-6">
   <div class="field">
     <%= f.label :type_id %><br />
-    <%= collection_select(:task, :type_id, Type.all, :id, :name) %> 
+    <%= collection_select(:task, :type_id, Type.all, :id, :name,{}, {:class => 'form-control'}) %> 
   </div>
   <div class="field">
     <%= f.label :system_responsible_id %><br />
-    <%= collection_select(:task, :system_responsible_id, Responsible.all, :id, :firstname) %> 
+    <%= collection_select(:task, :system_responsible_id, Responsible.all, :id, :firstname,{}, {:class => 'form-control'}) %>    
   </div>
   <div class="field">
     <%= f.label :place_responsible_id %><br />
-    <%= collection_select(:task, :place_responsible_id, Responsible.all, :id, :firstname) %> 
+    <%= collection_select(:task, :place_responsible_id, Responsible.all, :id, :firstname,{}, {:class => 'form-control'}) %>     
   </div>
-  <div class="field">
+  <div class="input-group">
     <%= f.label :observations %><br>
-    <%= f.text_area :observations %>
+    <%= f.text_area :observations , class: "form-control"  %>
   </div>
-  <div class="field">
+	<div class="input-group">
     <%= f.label :hh %><br>
-    <%= f.text_field :hh %>
+    <%= f.text_field :hh, class: "form-control"  %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Create Task</button>
+
 </div>
 </div>
 <% end %>
