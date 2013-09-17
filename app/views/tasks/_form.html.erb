@@ -20,7 +20,8 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.text_field :date, value: Date.today %>
+    <!-- f.text_field :date , value: Date.today -->
+    <%= f.date_select :date %>
   </div>
 	<div class="form-group">
 	  <%= f.label :activity %><br>
